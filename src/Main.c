@@ -1,5 +1,15 @@
-#include "C:/Wichtig/System/Static/Container/Heap.h"
-#include <stdlib.h>
+#if defined(__linux__)
+#include "/home/codeleaded/System/Static/Container/Heap.h"
+#elif defined(_WINE)
+#include "/home/codeleaded/System/Static/Container/Heap.h"
+#elif defined(_WIN32)
+#include "F:/home/codeleaded/System/Static/Container/Heap.h"
+#elif defined(__APPLE__)
+#error "Apple not supported!"
+#else
+#error "Platform not supported!"
+#endif
+
 
 int main(int argc, char const *argv[]){
     void* Memory = malloc(1000);
